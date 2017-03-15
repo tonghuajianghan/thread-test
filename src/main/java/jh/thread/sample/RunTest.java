@@ -5,7 +5,7 @@ import org.junit.Test;
 public class RunTest {
 	@Test
 	public void testThread(){
-		ThreadTest tt = new ThreadTest();
+		ThreadTestSample tt = new ThreadTestSample();
 		tt.start();
 		System.out.println("main end ...");
 		

@@ -2,15 +2,17 @@ package jh.thread.sample;
 
 public class ThreadTest extends Thread{
 
-	public synchronized void start() {
-		// TODO Auto-generated method stub
-		super.start();
-	}
-
+	/* (non-Javadoc)
+	 * @see java.lang.Thread#run()
+	 */
+	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		super.run();
-		System.out.println("thread test run ...");
+		System.out.println("thread is ... ");
 	}
 	
+	public static void main(String[] args) {
+		ThreadTest t = new ThreadTest();
+		t.start();
+		System.out.println("main is end ...");
+	}
 }
