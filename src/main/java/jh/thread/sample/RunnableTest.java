@@ -1,6 +1,15 @@
 package jh.thread.sample;
 
 /**
+ *  java 实现多线程可以使用4种方法
+ *  
+ *  1.实现Runnable接口创建线程
+ *  2.继承Thread类创建线程
+ *  3.实现Callable接口创建有返回值的线程
+ *
+ * 
+ * 
+ * 
  * 	1.run()方法：
  *       	直接调用run()方法其实就是普通的方法调用。此时依然只有main这个主线程，和多线程没什么关系。
  *	2.start()方法：

@@ -1,5 +1,11 @@
 package jh.jvm.allocation;
 
+/**
+ * 分配内存
+ * 
+ * @author JiangHan
+ *
+ */
 public class testAllocation {
 	/**
 	 * vm 参数需要
