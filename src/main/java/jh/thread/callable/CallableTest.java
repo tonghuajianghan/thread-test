@@ -23,7 +23,7 @@ import org.junit.Test;
 public class CallableTest {
 
 	/**
-	 * 通过ExecutorService 实现Callable
+	 * 通过ExecutorService 执行 Callable
 	 * 
 	 * 
 	 * @throws InterruptedException
@@ -72,6 +72,8 @@ public class CallableTest {
 		FutureTask<Integer> ft = new FutureTask<Integer>(cl);
 		new Thread(ft).start();
 	}
+	
+	
 }
 
 class MyCallable implements Callable<Object> {
