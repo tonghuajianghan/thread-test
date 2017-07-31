@@ -1,5 +1,8 @@
 package jh.thread.sample;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+
 /**
  *  java 实现多线程可以使用4种方法
  *  
@@ -35,6 +38,18 @@ public class RunnableTest {
 		new Thread(mt).start();
 		//new Thread(mt).start();
 		System.out.println("this is main ...");
+		
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				System.out.println("------------------" + Thread.currentThread().getName());
+			}
+		}).start();
+		
+		
 	}
 	
 }

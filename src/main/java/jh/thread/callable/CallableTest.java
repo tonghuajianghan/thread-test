@@ -30,7 +30,7 @@ public class CallableTest {
 	 * @throws ExecutionException
 	 */
 	@Test
-	@Ignore
+	//@Ignore
 	public void test1() throws InterruptedException, ExecutionException {
 		System.out.println("----程序开始运行----");
 		Date date1 = new Date();
@@ -46,7 +46,7 @@ public class CallableTest {
 			Future f = pool.submit(c);//多线程开启
 			
 			//阻塞主线程知道分线程结束,返回线程结果
-			//System.out.println(">>>" + f.get().toString());
+			System.out.println(">>>" + f.get().toString());
 			
 			list.add(f);
 		}
@@ -65,12 +65,18 @@ public class CallableTest {
 	
 	/**
 	 * 通过FutureTask实现Callable
+	 * @throws ExecutionException 
+	 * @throws InterruptedException 
 	 */
-	@Test
-	public void test2(){
+//	@Test
+	public void test2() throws InterruptedException, ExecutionException{
 		Callable cl = new MyCallable("1");
-		FutureTask<Integer> ft = new FutureTask<Integer>(cl);
+		FutureTask<String> ft = new FutureTask<String>(cl);
 		new Thread(ft).start();
+		
+		String rf= ft.get();//等待线程返回值
+		System.out.println("------------" + rf);
+		
 	}
 	
 	
