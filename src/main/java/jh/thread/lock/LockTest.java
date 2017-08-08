@@ -1,6 +1,7 @@
 package jh.thread.lock;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,54 +15,41 @@ import org.junit.Test;
  *
  */
 public class LockTest {
+	public List<Integer> list = new ArrayList<Integer>();
+	private Lock lock = new ReentrantLock();
+
+	public void add(int e) {
+//		lock.lock();//竞态资源,顺序访问
+		list.add(e);
+		System.out.println("add:" + e +"-----"+ list.get(e)+"--------" + Thread.currentThread().getName()+"-------" + "");
+//		lock.unlock();
+	}
 
 	@Test
 	public void testLock() {
-		
-		List<Integer> list = new ArrayList<Integer>(1000);
-		System.out.println("list.size=" + list.size());
-		for (int i = 0; i < 100; i++) {
-			list.add(i, i);
+		for (int i = 0; i < 10; i++) {
+			new Thread(new rru(this, i)).start();
 		}
-
-		for (int i = 0; i < 20; i++) {
-			
-			new Thread(new rru(list,i)).start();
-		
-			
-		}
-
-//		System.out.println("--------------------------------------------");
-//		for (int i = 0; i < 100; i++) {
+//		System.out.println("list.size=" + list.size());
+//		for (int i = 0; i < list.size(); i++) {
 //			System.out.println(list.get(i));
 //		}
-
 	}
+
 }
 
-
-class rru implements Runnable{
-	final Lock lock = new ReentrantLock();
-	List<Integer> l ;
+class rru implements Runnable {
+	LockTest lt;
 	int i;
-	
-	public rru(List<Integer> l,int i){
-		this.l = l;
+
+	public rru(LockTest lockTest, int i) {
+		this.lt = lockTest;
 		this.i = i;
 	}
-	
+
 	@Override
 	public void run() {
-		lock.lock();
-		l.add(i);
-		System.out.println(l.get(i));
-		System.out.println("list.size=" + l.size());
-		lock.unlock();
-		
+		lt.add(i);
 	}
-	
-	
-	
-	
-	
+
 }
