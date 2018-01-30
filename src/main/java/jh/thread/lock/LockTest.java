@@ -1,12 +1,11 @@
 package jh.thread.lock;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
-import org.junit.Test;
 
 /**
  * 学习lock接口下的类
@@ -15,14 +14,14 @@ import org.junit.Test;
  *
  */
 public class LockTest {
-	public List<Integer> list = new ArrayList<Integer>();
+	public List<Integer> list = new ArrayList<Integer>(10);
 	private Lock lock = new ReentrantLock();
 
 	public void add(int e) {
-//		lock.lock();//竞态资源,顺序访问
+		lock.lock();//竞态资源,顺序访问
 		list.add(e);
-		System.out.println("add:" + e +"-----"+ list.get(e)+"--------" + Thread.currentThread().getName()+"-------" + "");
-//		lock.unlock();
+		System.out.println("add:" + e +"-----"+ "list.get(e)"+"--------" + Thread.currentThread().getName()+"-------" + "");
+		lock.unlock();
 	}
 
 	@Test
