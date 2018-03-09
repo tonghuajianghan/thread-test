@@ -6,7 +6,7 @@ package jh.jvm.allocation;
  * @author JiangHan
  *
  */
-public class testAllocation {
+public class TestAllocation {
 	/**
 	 * vm 参数需要
 	 * -verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
