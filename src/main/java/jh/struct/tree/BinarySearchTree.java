@@ -1,5 +1,8 @@
 package jh.struct.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 简单实现 二杈查找树
  *
@@ -123,6 +126,34 @@ public class BinarySearchTree {
         }
     }
 
+    // 递归中序遍历
+    public void inOrder(Node current,List list) {
+        if (current != null) {
+            inOrder(current.left,list);
+            list.add(current.key);
+            System.out.print(current.key + ",");
+            inOrder(current.right,list);
+        }
+    }
+    // 递归前序遍历
+    public void preOrder(Node current,List list) {
+        if (current != null) {
+            list.add(current.key);
+            System.out.print(current.key + ",");
+            preOrder(current.left,list);
+            preOrder(current.right,list);
+        }
+    }
+    // 递归后序遍历
+    public void postOrder(Node current,List list) {
+        if (current != null) {
+            postOrder(current.left,list);
+            postOrder(current.right,list);
+            list.add(current.key);
+            System.out.print(current.key + ",");
+        }
+    }
+
     public static void main(String[] args) {
 
         BinarySearchTree b = new BinarySearchTree(36);
@@ -142,7 +173,13 @@ public class BinarySearchTree {
         System.out.println("----");
         b.remove(58);
         System.out.println("----");
-
+        List list = new ArrayList();
+        b.inOrder(b.root, list);
+        System.out.println();
+        b.preOrder(b.root, list);
+        System.out.println();
+        b.postOrder(b.root, list);
+        System.out.println();
     }
 }
 
