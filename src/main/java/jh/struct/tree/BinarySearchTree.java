@@ -8,7 +8,7 @@ import java.util.List;
  *
  * Created by 17020751 on 2018/3/9.
  */
-public class BinarySearchTree {
+public class BinarySearchTree extends Tree{
 
     Node root;
 
@@ -154,6 +154,22 @@ public class BinarySearchTree {
         }
     }
 
+    public int maxDepth(Node node) {
+        if(null == node){
+           return 0;
+        }else{
+
+           /* compute the depth of each subtree */
+           int leftDepth = maxDepth(node.left);
+           int reghtDepth = maxDepth(node.right);
+           if(leftDepth>reghtDepth){
+               return leftDepth + 1;
+           }else {
+               return  reghtDepth + 1;
+           }
+        }
+    }
+
     public static void main(String[] args) {
 
         BinarySearchTree b = new BinarySearchTree(36);
@@ -179,7 +195,8 @@ public class BinarySearchTree {
         b.preOrder(b.root, list);
         System.out.println();
         b.postOrder(b.root, list);
-        System.out.println();
+        System.out.println("\n" + b.maxDepth(b.root));
+
     }
 }
 
