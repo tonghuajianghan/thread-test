@@ -115,6 +115,23 @@ public class AVLTree extends BinarySearchTree{
         return b;
     }
 
+    @Override
+    public void put(int key) {
+       Node node = search(root,key);
+       super.insert(root,key);
+       reBalance(node);
+    }
+
+    @Override
+    public void remove(int key) {
+        Node node = search(root,key);
+        super.delete(root, key);
+        if(node.parent != null){
+            reBalance(node.parent);
+        }
+
+    }
+
     public static void main(String[] args) {
         AVLTree b = new AVLTree(36);
         b.put(27);

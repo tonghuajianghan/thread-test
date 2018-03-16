@@ -18,6 +18,7 @@ public class BinarySearchTree extends Tree{
         Node left;
         Node right;
         Node parent;//用于删除
+        boolean isRed = false;//用于红黑树
     }
 
     public BinarySearchTree(int key) {
@@ -60,7 +61,7 @@ public class BinarySearchTree extends Tree{
     }
 
     public void insert(Node root, int key){
-        Node u = search(root,key);//此时p已经是root子树中-查找线路-最高节点
+        Node u = search(root,key);//此时u已经是root子树中-查找线路-最高节点
         if (u.key != key){//没有--添加
             Node n = new Node();
             n.parent = u;
