@@ -3,9 +3,9 @@ package jh.leetcode;
 import org.junit.Test;
 
 /**
- * Created by 17020751 on 2017/11/29.
+ * Created by 17020751 on 2018/3/17.
  */
-public class Code {
+public class No2_AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode target = new ListNode(0);

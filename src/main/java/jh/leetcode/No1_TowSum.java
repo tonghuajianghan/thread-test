@@ -3,7 +3,7 @@ package jh.leetcode;
 /**
  * Created by 17020751 on 2017/11/29.
  */
-public class TowSum {
+public class No1_TowSum {
     public int[] twoSum(int[] nums, int target) {
         for(int i=0;i < nums.length; i++){
             for(int j=0;j < nums.length; j++){

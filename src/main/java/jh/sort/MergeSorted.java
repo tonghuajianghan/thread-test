@@ -1,6 +1,9 @@
 package jh.sort;
 
 /**
+ *  归并排序
+ *  分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）
+ *
  * Created by 17020751 on 2018/3/15.
  */
 public class MergeSorted {
