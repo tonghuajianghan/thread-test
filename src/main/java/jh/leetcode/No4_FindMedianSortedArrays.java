@@ -9,50 +9,38 @@ public class No4_FindMedianSortedArrays {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         double r;
-        if(nums1.length == 0){
-            if((nums2.length)%2 == 0){
-                r = (double) (nums2[(nums2.length-1)/2] + nums2[(nums2.length-1)/2 +1])/2;
+        //构造
+        int[] a = new int[nums1.length + nums2.length];
+        for (int i = 0; i < a.length; i++) {
+            if(i<nums1.length){
+                a[i] = nums1[i];
             }else {
-                r = nums2[(nums2.length-1)/2];
+                a[i] = nums2[i-nums1.length];
             }
-            return r;
         }
-        if(nums2.length == 0){
-            if((nums1.length)%2 == 0){
-                r = (double) (nums1[(nums1.length-1)/2] + nums1[(nums1.length-1)/2 +1])/2;
-            }else {
-                r = nums1[(nums1.length-1)/2];
-            }
-            return r;
-        }
-
-        for (int i = 0; i < nums1.length; i++) {
-            for (int j = 0; j < nums2.length; j++) {
-                if(nums2[j] < nums1[i]){
-                    int temp = nums1[i];
-                    nums1[i] = nums2[j];
-                    nums2[j] = temp;
-                    break;
+        //选择排序
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i+1; j < a.length; j++) {
+                if(a[j]<a[i]){
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
                 }
             }
         }
-        int length = nums1.length + nums2.length;
-        if((length)%2 == 0){
-            r= (double) (nums1[(nums1.length-1)] + nums2[0])/2;
+        //计算
+        if(a.length%2==0){
+           r =(double) (a[a.length/2-1] + a[a.length/2])/2;
         }else {
-            if(nums1.length < nums2.length){
-                r = nums2[0];
-            }else {
-                r=  nums1[nums1.length-1];
-            }
+            r = (double)a[a.length/2-1];
         }
         return r;
     }
 
     @Test
     public void test(){
-      int[]  nums1 = {1, 2};
-      int[]  nums2 = {1,1};
+      int[]  nums1 = {};
+      int[]  nums2 = {2,3};
       double r = new No4_FindMedianSortedArrays().findMedianSortedArrays(nums1,nums2);
       System.out.println(r);
     }
