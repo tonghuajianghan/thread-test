@@ -2,6 +2,7 @@ package jh.leetcode;
 
 /**
  * Created by 17020751 on 2018/3/17.
+ * 两个类不会有锁的标志
  */
 public class No2_AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
