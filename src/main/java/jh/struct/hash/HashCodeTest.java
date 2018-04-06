@@ -26,7 +26,7 @@ public class HashCodeTest {
 		System.out.println(abf.hashCode());
 		//
 		Object o = new Object();
-		System.out.println(o.hashCode());
+		System.out.println("默认返回内存地址" + o.hashCode());
 		
 	}
 	
