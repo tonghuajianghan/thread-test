@@ -32,4 +32,21 @@ public class Sorted {
         }
         System.out.println(show);
     }
+
+    //冒泡
+    public static void bubbleSort(int[] arr) {
+        int i, temp, len = arr.length;
+        boolean changed;
+        do {
+            changed = false;
+            for (i = 0; i < len - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    changed = true;
+                }
+            }
+        } while (changed);
+    }
 }
