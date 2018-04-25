@@ -46,7 +46,8 @@ public class MergeSorted {
 
     public static void main(String[] args) {
         int[] a = {2,1,55,6,8,9,45,12,34,78,98,14};
-        merge(a,0,a.length-1);
-        Sorted.show(a);
+        int[] a2 = {7,9,6,5};
+        merge(a2,0,a2.length-1);
+        Sorted.show(a2);
     }
 }

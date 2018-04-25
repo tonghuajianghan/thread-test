@@ -1,12 +1,9 @@
 
 package jh.thread.executor;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Test;
+
+import java.util.concurrent.*;
 
 /**
  * @author 17020751
@@ -96,5 +93,26 @@ public class ExecutorServiceTest {
 //		}, 1, 3, TimeUnit.SECONDS);
 
 	}
+
+	//关闭
+    //This is the preferred way how I typically shutdown executors:
+    public void shutdown(){
+        ExecutorService executor = Executors.newFixedThreadPool(4);
+        try {
+            System.out.println("attempt to shutdown executor");
+            executor.shutdown();
+            executor.awaitTermination(5, TimeUnit.SECONDS);
+        }
+        catch (InterruptedException e) {
+            System.err.println("tasks interrupted");
+        }
+        finally {
+            if (!executor.isTerminated()) {
+                System.err.println("cancel non-finished tasks");
+            }
+            executor.shutdownNow();
+            System.out.println("shutdown finished");
+        }
+    }
 
 }
