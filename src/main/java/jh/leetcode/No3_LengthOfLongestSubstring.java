@@ -10,14 +10,14 @@ import org.junit.Test;
 public class No3_LengthOfLongestSubstring {
 
     public int lengthOfLongestSubstring(String s) {
-        String minSub = new String();
-        for (int i = 0; i < s.length(); i++) {
-            String curSub = new String();;
-            for (int j = i; j < s.length(); j++) {
-                //替换
+        String minSub = new String();//记忆存储
+        for (int i = 0; i < s.length(); i++) {//分解子问题
+            String curSub = new String();
+            for (int j = i; j < s.length(); j++) {//子问题最优解
+                //替换 不包含重复
                 if(-1 == curSub.indexOf(s.charAt(j))){
                     curSub = s.substring(i,j+1);
-                }else {
+                }else { //包含重复
                     j = s.length();//找到最大不重复子字符串,停止循环
                 }
             }

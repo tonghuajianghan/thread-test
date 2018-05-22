@@ -3,7 +3,10 @@ package jh.thread.executor;
 
 import org.junit.Test;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author 17020751
@@ -31,11 +34,11 @@ import java.util.concurrent.*;
  */
 public class ExecutorServiceTest {
 
-	// @Test
+    //@Test
 	public void testCacheThreadPool() throws InterruptedException {
 		ExecutorService executorCachedThreadPool = Executors.newCachedThreadPool();
 		for (int i = 0; i < 10; i++) {
-			// Thread.sleep(i*1000);//给足充足的时间,只会利用第一个线程 pool-1-thread-1
+			 Thread.sleep(i*1000);//给足充足的时间,只会利用第一个线程 pool-1-thread-1
 			final int index = i;
 			executorCachedThreadPool.execute(new Runnable() {
 

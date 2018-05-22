@@ -17,7 +17,7 @@ public class QuickSorted extends Sorted{
             if(i>=j)break;
             exchange(a,i,j);
         }
-        exchange(a,lo,j);//j为切分点
+        exchange(a,lo,j);//j为切分点,此时j点左边的都比j点小,右边的都比j点大,因此使用j点为分割点
         return j;
     }
 

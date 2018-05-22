@@ -9,7 +9,7 @@ package jh.sort;
 public class MergeSorted {
 
     public static void merge(int[] a,int start,int end){//中间拆分数组,有序合并拆分后的数组
-        if(start >= end){
+        if(start >= end){//解决
             return;
         }
 
@@ -23,7 +23,7 @@ public class MergeSorted {
 
         merge(a,start1,end1);
         merge(a,start2,end2);
-
+        //合并
         int[] au = new int[a.length];//辅助数组
         for (int k = 0; k < a.length; k++) {
             au[k] = a[k];

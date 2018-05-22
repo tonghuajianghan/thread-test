@@ -17,7 +17,7 @@ public class SelectionSorted extends Sorted{
 
     public static void sorted(int[] array){
         for (int i = 0; i < array.length; i++) {
-            int min = i;//设第一个为最小元素
+            //int min = i;//设第一个为最小元素
             for (int j = i+1; j < array.length; j++) {//第一个元素与从第二个开始的数组比较,比较出最小值,替换第一个
                 if(less(array[i],array[j])){//遍历-交换-找到最小值
                     exchange(array,i,j);

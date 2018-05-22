@@ -14,7 +14,7 @@ public class ThreadPoolTest {
     @Test
     public void testThreadPool(){
         LinkedBlockingQueue lbq = new LinkedBlockingQueue();
-        ThreadPoolExecutor tpe = new ThreadPoolExecutor(2,2,6l, TimeUnit.SECONDS, lbq);
+        ThreadPoolExecutor tpe = new ThreadPoolExecutor(3,6,4l, TimeUnit.SECONDS, lbq);
         DoRunnable runnable1 = new DoRunnable(1,"thread-1");
         DoRunnable runnable2 = new DoRunnable(2,"thread-2");
         DoRunnable runnable3 = new DoRunnable(3,"thread-3");

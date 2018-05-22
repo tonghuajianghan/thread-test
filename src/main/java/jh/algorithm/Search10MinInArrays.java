@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
+ * 分解成有或没有两个选项
+ *
  * Created by 17020751 on 2018/4/23.
  */
 public class Search10MinInArrays {
