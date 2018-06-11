@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.14" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <interface id="1" language="java" name="java.util.concurrent.Callable" project="socketTest" 
+  <interface id="1" language="java" name="java.java.util.concurrent.Callable" project="socketTest"
     file="D:/SuNing_DEV_All_V0.7/jdk16/jre/lib/rt.jar" binary="true" corner="BOTTOM_RIGHT">    
     <position x="304" y="76" width="-1" height="-1"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
