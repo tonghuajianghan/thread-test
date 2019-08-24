@@ -1,4 +1,4 @@
-package jh.leetcode;
+package algorithm.leetcode;
 
 /**
  * Created by 17020751 on 2018/3/17.

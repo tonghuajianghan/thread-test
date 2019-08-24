@@ -1,4 +1,4 @@
-package jh.sort;
+package algorithm.sort;
 
 /**
  *  归并排序

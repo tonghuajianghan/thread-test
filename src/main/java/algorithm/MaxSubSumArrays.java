@@ -1,4 +1,4 @@
-package jh.algorithm;
+package algorithm;
 
 /**
  * 最大连续子数组和

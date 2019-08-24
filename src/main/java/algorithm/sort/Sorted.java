@@ -1,4 +1,4 @@
-package jh.sort;
+package algorithm.sort;
 
 /**
  *  排序包括两种基本操作

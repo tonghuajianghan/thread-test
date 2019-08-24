@@ -1,4 +1,4 @@
-package jh.leetcode;
+package algorithm.leetcode;
 
 import org.junit.Test;
 

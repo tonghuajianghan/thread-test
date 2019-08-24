@@ -1,4 +1,4 @@
-package jh.sort;
+package algorithm.sort;
 
 /**
  * 堆只是一种概念,具体的存储体是数组,

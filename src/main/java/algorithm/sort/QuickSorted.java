@@ -1,4 +1,4 @@
-package jh.sort;
+package algorithm.sort;
 
 /**
  * 快速排序
@@ -34,7 +34,7 @@ public class QuickSorted extends Sorted{
         //int[] a = {2,1,55,6,8,9,45,12,34,78,98,14};
         int[] a = {2,1};
         sorted(a,0,a.length-1);
-        Sorted.show(a);
+        show(a);
 
         int i= 0,j=2;
         while (i++ > 5){
